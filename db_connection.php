@@ -2,7 +2,7 @@
 
 function OpenCon()
  {
-	echo "Attempting DB connectionK.....<br>";
+	echo "Attempting DB connectionE.....<br>";
 	
 	$vcap_services = json_decode($_ENV["VCAP_SERVICES" ]);
 	 if($vcap_services->{'cleardb'}){ //if cleardb mysql db service is bound to this application
@@ -28,8 +28,14 @@ $mysql_database = ad_2562c879fd43c90;
 	
 	*/
 	
+	if (!function_exists('mysqli_init') && !extension_loaded('mysqli')) {
+    echo 'We don\'t have mysqli!!!\n';
+} else {
+    echo 'Phew, we have mysqli!\n';
+}
+	
     echo "Debug: " . $mysql_server_name . " " . $mysql_database . " " .  $mysql_username . " " .  $mysql_password . "\n";
-echo " Connecting.....  \n" ;
+echo " \nConnecting.....  \n" ;
 $mysqli = new mysqli($mysql_server_name, $mysql_username, $mysql_password, $mysql_database);
 	echo " Checking......  \n" ;
 if ($mysqli->connect_errno) {
