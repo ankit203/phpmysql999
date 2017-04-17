@@ -2,7 +2,7 @@
 
 function OpenCon()
  {
-	echo "Attempting DB connectionP.....<br>";
+	echo "Attempting DB connectionK.....<br>";
 	
 	$vcap_services = json_decode($_ENV["VCAP_SERVICES" ]);
 	 if($vcap_services->{'cleardb'}){ //if cleardb mysql db service is bound to this application
@@ -28,7 +28,7 @@ $mysql_database = ad_2562c879fd43c90;
 	
 	*/
 	
-    echo "Debug: " . $mysql_server_name . " " .  $mysql_username . " " .  $mysql_password . "\n";
+    echo "Debug: " . $mysql_server_name . " " . $mysql_database . " " .  $mysql_username . " " .  $mysql_password . "\n";
 
 $mysqli = new mysqli($mysql_server_name, $mysql_username, $mysql_password, $mysql_database);
 if ($mysqli->connect_errno) {
