@@ -30,13 +30,21 @@ $mysql_database = ad_2562c879fd43c90;
 	
     echo "Debug: " . $mysql_server_name . " " .  $mysql_username . " " .  $mysql_password . "\n";
 
+$mysqli = new mysqli($mysql_server_name, $mysql_username, $mysql_password, $mysql_database);
+if ($mysqli->connect_errno) {
+    echo "Failed to connect to MySQL: (" . $mysqli->connect_errno . ") " . $mysqli->connect_error;
+    die();
+}
+echo "Connected to MySQL kkkk.". "<br>" ;
+
+	/*
 $conn = new mysqli($mysql_server_name, $mysql_username, $mysql_password, $mysql_database);
 if ($conn->connect_errno) {
     echo "Failed to connect to MySQL: (" . $conn->connect_errno . ") " . $conn->connect_error;
     die();
 }
 echo "Connected to MySQL kkkk.". "<br>" ;
-
+*/
 /*
  $dbhost = "localhost";
  $dbuser = "root";
@@ -47,7 +55,7 @@ echo "Connected to MySQL kkkk.". "<br>" ;
  $conn = new mysqli($dbhost, $dbuser, $dbpass,$db) or die("Connect failed: %s\n". $conn -> error);
 */
  
- return $conn;
+ return $mysqli;
  }
  
 function CloseCon($conn)
