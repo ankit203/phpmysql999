@@ -6,8 +6,9 @@ session_start();
 <html>
 <body>
 <?php
+ echo "Execution Started........... <br>";   
 include 'db_connection.php';
-
+echo "Attempting connection...to mysql. <br>";
 $conn = OpenCon();
 
 echo "<br>"."Connected Successfully to mysql";
