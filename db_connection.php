@@ -2,8 +2,9 @@
 
 function OpenCon()
  {
-	echo "Attempting DB connection.....";
+	echo "Attempting DB connection.....<br>";
 	
+	$vcap_services = json_decode($_ENV["VCAP_SERVICES" ]);
 	 if($vcap_services->{'cleardb'}){ //if cleardb mysql db service is bound to this application
         	 echo "cleardb bound. <br>";
         $db = $vcap_services->{'cleardb'}[0]->credentials;
