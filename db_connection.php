@@ -8,7 +8,7 @@ function OpenCon()
     } 
     else { 
         echo "Error: No suitable MySQL database bound to the application. <br>";
-        die();
+        //die();
     }
     $mysql_database = $db->name;
     $mysql_port=$db->port;
@@ -16,6 +16,12 @@ function OpenCon()
     $mysql_username = $db->username; 
     $mysql_password = $db->password;
     
+$mysql_database = ad_2562c879fd43c90;
+    $mysql_port=3306;
+    $mysql_server_name =$db->hostname . ':' . $db->3306;
+    $mysql_username = bd5b4bd94d3c98; 
+    $mysql_password = 4bc596d2;
+	
     echo "Debug: " . $mysql_server_name . " " .  $mysql_username . " " .  $mysql_password . "\n";
 
 $conn = new mysqli($mysql_server_name, $mysql_username, $mysql_password, $mysql_database);
