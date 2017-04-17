@@ -23,7 +23,7 @@ CloseCon($conn);
 </form>
 
 <?php
-echo "<br>";
+/*echo "<br>";
 echo "<br>";
 $_SESSION["favcolor"] = "yellow";
 print_r($_SESSION);echo "<br>";
@@ -33,7 +33,7 @@ echo $_SERVER['SCRIPT_NAME'];echo "<br>";
 echo $_SERVER['HTTP_USER_AGENT'];echo "<br>";
 // remove all session variables
 session_unset(); 
-
+*/
 // destroy the session 
 session_destroy(); 
 ?>
