@@ -29,8 +29,9 @@ $mysql_database = ad_2562c879fd43c90;
 	*/
 	
     echo "Debug: " . $mysql_server_name . " " . $mysql_database . " " .  $mysql_username . " " .  $mysql_password . "\n";
-
+echo " Connecting.....  \n" ;
 $mysqli = new mysqli($mysql_server_name, $mysql_username, $mysql_password, $mysql_database);
+	echo " Checking......  \n" ;
 if ($mysqli->connect_errno) {
     echo "Failed to connect to MySQL: (" . $mysqli->connect_errno . ") " . $mysqli->connect_error;
     die();
